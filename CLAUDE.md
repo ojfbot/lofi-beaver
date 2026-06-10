@@ -124,3 +124,18 @@ Six types — see `src/flood/tiles.ts`: `lot`, `arterial`, `culdesac`, `swale`,
 - Not yet built: gnaw/lodge actions, swale + cul-de-sac tile sprites,
   restart-after-ending, flood balance pass (the source currently wins any
   long game; dams only delay it — arguably the theme, definitely untuned).
+
+## Process: PR + rebase-only (no direct pushes to main)
+
+Main is governed by an active repo ruleset (mirrors core's, plus required
+status checks core doesn't have):
+
+- **All changes land via PR** — including docs and ADRs. No direct commits
+  to main; force pushes and branch deletion are blocked.
+- **Rebase is the only merge method** (merge commits and squash are disabled
+  repo-wide). Keep branches rebased on main; history stays linear.
+- **Required checks**: `build-test` (typecheck → test → build →
+  validate-sprites) and `visual-gate` (headless-browser 1-bit invariant)
+  must pass before merge; the branch must be up to date with main (strict).
+- Solo-dev review policy: 0 approvals required — checks are the gate, the
+  PR is the record. Branches auto-delete on merge.
