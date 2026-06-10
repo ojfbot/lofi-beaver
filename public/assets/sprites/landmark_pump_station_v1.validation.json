@@ -1,0 +1,29 @@
+{
+  "asset_id": "landmark_pump_station",
+  "kind": "sprite",
+  "status": "validated",
+  "gates": [
+    {
+      "gate": "dims",
+      "pass": true,
+      "detail": "want 96x96, got 96x96"
+    },
+    {
+      "gate": "purity",
+      "pass": true,
+      "detail": "all pixels 1-bit"
+    },
+    {
+      "gate": "coverage",
+      "pass": true,
+      "detail": "0.1489"
+    },
+    {
+      "gate": "anchor",
+      "pass": true,
+      "detail": "anchor (48, 48) in frame 96x96"
+    }
+  ],
+  "validated_with": "scripts/validate-sprites.ts",
+  "blender": "5.1.1"
+}

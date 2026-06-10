@@ -1,0 +1,32 @@
+{
+  "asset_id": "tile_grass",
+  "kind": "sprite",
+  "pixel_size": [
+    128,
+    32
+  ],
+  "frame": {
+    "count": 2,
+    "w": 64,
+    "h": 32
+  },
+  "anchor_px": [
+    32,
+    16
+  ],
+  "tile_footprint": [
+    1,
+    1
+  ],
+  "palette_independent": true,
+  "ppu": 45.2548,
+  "camera": {
+    "yaw_deg": 45,
+    "elev_deg": 30
+  },
+  "ink_coverage_per_frame": [
+    0.5645,
+    0.561
+  ],
+  "blender": "5.1.1"
+}

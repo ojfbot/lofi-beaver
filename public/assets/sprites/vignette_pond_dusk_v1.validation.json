@@ -1,0 +1,29 @@
+{
+  "asset_id": "vignette_pond_dusk",
+  "kind": "vignette",
+  "status": "validated",
+  "gates": [
+    {
+      "gate": "dims",
+      "pass": true,
+      "detail": "want 960x720, got 960x720"
+    },
+    {
+      "gate": "purity",
+      "pass": true,
+      "detail": "all pixels 1-bit"
+    },
+    {
+      "gate": "coverage",
+      "pass": true,
+      "detail": "0.3254"
+    },
+    {
+      "gate": "anchor",
+      "pass": true,
+      "detail": "anchor (480, 360) in frame 960x720"
+    }
+  ],
+  "validated_with": "scripts/validate-sprites.ts",
+  "blender": "5.1.1"
+}

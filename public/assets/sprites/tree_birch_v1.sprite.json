@@ -1,0 +1,32 @@
+{
+  "asset_id": "tree_birch",
+  "kind": "sprite",
+  "pixel_size": [
+    128,
+    96
+  ],
+  "frame": {
+    "count": 2,
+    "w": 64,
+    "h": 96
+  },
+  "anchor_px": [
+    32,
+    48
+  ],
+  "tile_footprint": [
+    1,
+    1
+  ],
+  "palette_independent": true,
+  "ppu": 45.2548,
+  "camera": {
+    "yaw_deg": 45,
+    "elev_deg": 30
+  },
+  "ink_coverage_per_frame": [
+    0.3262,
+    0.374
+  ],
+  "blender": "5.1.1"
+}

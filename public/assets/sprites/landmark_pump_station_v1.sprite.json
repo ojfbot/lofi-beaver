@@ -1,0 +1,31 @@
+{
+  "asset_id": "landmark_pump_station",
+  "kind": "sprite",
+  "pixel_size": [
+    96,
+    96
+  ],
+  "frame": {
+    "count": 1,
+    "w": 96,
+    "h": 96
+  },
+  "anchor_px": [
+    48,
+    48
+  ],
+  "tile_footprint": [
+    1,
+    1
+  ],
+  "palette_independent": true,
+  "ppu": 45.2548,
+  "camera": {
+    "yaw_deg": 45,
+    "elev_deg": 30
+  },
+  "ink_coverage_per_frame": [
+    0.2305
+  ],
+  "blender": "5.1.1"
+}

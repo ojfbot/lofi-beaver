@@ -1,0 +1,31 @@
+{
+  "asset_id": "house_cottage",
+  "kind": "sprite",
+  "pixel_size": [
+    64,
+    80
+  ],
+  "frame": {
+    "count": 1,
+    "w": 64,
+    "h": 80
+  },
+  "anchor_px": [
+    32,
+    40
+  ],
+  "tile_footprint": [
+    1,
+    1
+  ],
+  "palette_independent": true,
+  "ppu": 45.2548,
+  "camera": {
+    "yaw_deg": 45,
+    "elev_deg": 30
+  },
+  "ink_coverage_per_frame": [
+    0.6859
+  ],
+  "blender": "5.1.1"
+}

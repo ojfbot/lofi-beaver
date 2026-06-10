@@ -1,0 +1,106 @@
+# Sprite manifest — the lofi-beaver target's order book for the 1-bit iso
+# sprite modality. Schema designed foundry-native (future manifest/sprite-schema.ts
+# in asset-foundry core); owned target-side per ADR-0006 (true hybrid).
+#
+# canvas_px is the per-FRAME canvas; strips are frames laid out horizontally.
+# footprint is in 1×1 world tiles. kind: sprite (dithered) | vignette (line art).
+
+defaults:
+  tile_px: [64, 32]
+
+sprites:
+  - id: tile_grass
+    kind: sprite
+    canvas_px: [64, 32]
+    frames: 2          # variants
+    footprint: [1, 1]
+
+  - id: tile_road
+    kind: sprite
+    canvas_px: [64, 32]
+    frames: 1
+    footprint: [1, 1]
+
+  - id: tile_water
+    kind: sprite
+    canvas_px: [64, 32]
+    frames: 4          # animation
+    footprint: [1, 1]
+
+  - id: house_rambler
+    kind: sprite
+    canvas_px: [128, 96]
+    frames: 1
+    footprint: [2, 2]
+
+  - id: house_two_story
+    kind: sprite
+    canvas_px: [128, 128]
+    frames: 1
+    footprint: [2, 2]
+
+  - id: house_cottage
+    kind: sprite
+    canvas_px: [64, 80]
+    frames: 1
+    footprint: [1, 1]
+
+  - id: tree_birch
+    kind: sprite
+    canvas_px: [64, 96]
+    frames: 2          # variants
+    footprint: [1, 1]
+
+  - id: beaver_avatar
+    kind: sprite
+    canvas_px: [48, 48]
+    frames: 4          # facing directions: +x +y -x -y
+    footprint: [1, 1]
+
+  - id: dam_segment
+    kind: sprite
+    canvas_px: [64, 48]
+    frames: 1
+    footprint: [1, 1]
+
+  - id: landmark_pump_station
+    kind: sprite
+    canvas_px: [96, 96]
+    frames: 1
+    footprint: [1, 1]
+
+  - id: vignette_pump_station
+    kind: vignette
+    canvas_px: [960, 720]
+    frames: 1
+    footprint: [0, 0]
+
+  - id: vignette_pond_dusk
+    kind: vignette
+    canvas_px: [960, 720]
+    frames: 1
+    footprint: [0, 0]
+
+  - id: heron
+    kind: sprite
+    canvas_px: [48, 64]
+    frames: 2          # standing / fishing
+    footprint: [1, 1]
+
+  - id: vignette_heron
+    kind: vignette
+    canvas_px: [960, 720]
+    frames: 1
+    footprint: [0, 0]
+
+  - id: vignette_ending_watershed
+    kind: vignette
+    canvas_px: [960, 720]
+    frames: 1
+    footprint: [0, 0]
+
+  - id: vignette_ending_polite
+    kind: vignette
+    canvas_px: [960, 720]
+    frames: 1
+    footprint: [0, 0]

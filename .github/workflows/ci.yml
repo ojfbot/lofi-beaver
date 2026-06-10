@@ -1,0 +1,75 @@
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# good-camper upgrade over sibling repos: superseded runs are cancelled
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: typecheck
+        run: pnpm typecheck
+
+      - name: test
+        run: pnpm test
+
+      - name: build
+        run: pnpm build
+
+      - name: validate-sprites
+        run: pnpm sprites:validate
+
+  # The gate only this repo can have: boot the built game in a real headless
+  # browser and assert the 1-bit invariant (every gameplay screenshot is
+  # exactly 2 RGB values) plus a live flood-sim step. See ADR-0007/0008.
+  visual-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: install chromium
+        run: pnpm exec playwright install chromium --with-deps
+
+      - name: build
+        run: pnpm build
+
+      - name: 1-bit visual gate
+        run: pnpm gate:visual
+
+      - name: upload gate screenshots
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-gate-failures
+          path: tmp/gate-*.png
+          if-no-files-found: ignore

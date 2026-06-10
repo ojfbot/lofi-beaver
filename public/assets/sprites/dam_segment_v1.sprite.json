@@ -1,0 +1,31 @@
+{
+  "asset_id": "dam_segment",
+  "kind": "sprite",
+  "pixel_size": [
+    64,
+    48
+  ],
+  "frame": {
+    "count": 1,
+    "w": 64,
+    "h": 48
+  },
+  "anchor_px": [
+    32,
+    24
+  ],
+  "tile_footprint": [
+    1,
+    1
+  ],
+  "palette_independent": true,
+  "ppu": 45.2548,
+  "camera": {
+    "yaw_deg": 45,
+    "elev_deg": 30
+  },
+  "ink_coverage_per_frame": [
+    0.263
+  ],
+  "blender": "5.1.1"
+}

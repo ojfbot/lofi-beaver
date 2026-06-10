@@ -1,0 +1,32 @@
+{
+  "asset_id": "heron",
+  "kind": "sprite",
+  "pixel_size": [
+    96,
+    64
+  ],
+  "frame": {
+    "count": 2,
+    "w": 48,
+    "h": 64
+  },
+  "anchor_px": [
+    24,
+    32
+  ],
+  "tile_footprint": [
+    1,
+    1
+  ],
+  "palette_independent": true,
+  "ppu": 45.2548,
+  "camera": {
+    "yaw_deg": 45,
+    "elev_deg": 30
+  },
+  "ink_coverage_per_frame": [
+    0.2627,
+    0.2402
+  ],
+  "blender": "5.1.1"
+}

@@ -1,0 +1,29 @@
+{
+  "asset_id": "tile_water",
+  "kind": "sprite",
+  "status": "validated",
+  "gates": [
+    {
+      "gate": "dims",
+      "pass": true,
+      "detail": "want 256x32, got 256x32"
+    },
+    {
+      "gate": "purity",
+      "pass": true,
+      "detail": "all pixels 1-bit"
+    },
+    {
+      "gate": "coverage",
+      "pass": true,
+      "detail": "0.2285/0.2334/0.2427/0.2329"
+    },
+    {
+      "gate": "anchor",
+      "pass": true,
+      "detail": "anchor (32, 16) in frame 64x32"
+    }
+  ],
+  "validated_with": "scripts/validate-sprites.ts",
+  "blender": "5.1.1"
+}

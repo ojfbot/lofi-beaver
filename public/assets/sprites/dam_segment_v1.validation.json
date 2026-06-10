@@ -1,0 +1,29 @@
+{
+  "asset_id": "dam_segment",
+  "kind": "sprite",
+  "status": "validated",
+  "gates": [
+    {
+      "gate": "dims",
+      "pass": true,
+      "detail": "want 64x48, got 64x48"
+    },
+    {
+      "gate": "purity",
+      "pass": true,
+      "detail": "all pixels 1-bit"
+    },
+    {
+      "gate": "coverage",
+      "pass": true,
+      "detail": "0.1383"
+    },
+    {
+      "gate": "anchor",
+      "pass": true,
+      "detail": "anchor (32, 24) in frame 64x48"
+    }
+  ],
+  "validated_with": "scripts/validate-sprites.ts",
+  "blender": "5.1.1"
+}

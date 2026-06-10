@@ -1,0 +1,7 @@
+name: Security Scan
+
+on: [push, pull_request]
+
+jobs:
+  security:
+    uses: ojfbot/github-actions/.github/workflows/security-scan.yml@v1
