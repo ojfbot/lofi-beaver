@@ -12,6 +12,7 @@ concurrency:
 jobs:
   build-test:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
 
@@ -43,6 +44,9 @@ jobs:
   # exactly 2 RGB values) plus a live flood-sim step. See ADR-0007/0008.
   visual-gate:
     runs-on: ubuntu-latest
+    # a hung gate previously ran to the 6h job ceiling; the whole job needs
+    # well under 15 min (install + build + two page loads)
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
 

@@ -68,8 +68,15 @@ async function expectTwoColors(
 
 async function main(): Promise<void> {
   mkdirSync("tmp", { recursive: true });
+  // detached → own process group, so teardown can kill the whole
+  // pnpm → sh → node(vite) chain. server.kill() alone only reaches the pnpm
+  // wrapper; the surviving vite child holds the stdio pipes open and keeps
+  // this script's event loop alive forever — but only on the success path,
+  // because the failure paths call process.exit(). CI burned the full 6h job
+  // ceiling on every green gate before this.
   const server = spawn("pnpm", ["preview", "--port", String(PORT), "--strictPort"], {
     stdio: "pipe",
+    detached: true,
   });
   const failures: Failure[] = [];
   let browser;
@@ -122,7 +129,11 @@ async function main(): Promise<void> {
     }
   } finally {
     await browser?.close();
-    server.kill();
+    try {
+      if (server.pid) process.kill(-server.pid, "SIGTERM");
+    } catch {
+      server.kill();
+    }
   }
 
   if (failures.length > 0) {
@@ -130,6 +141,7 @@ async function main(): Promise<void> {
     process.exit(1);
   }
   console.log("visual gate: all checks passed");
+  process.exit(0);
 }
 
 main().catch((err) => {
