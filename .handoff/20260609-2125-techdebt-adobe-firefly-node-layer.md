@@ -1,6 +1,6 @@
 ---
 id: 20260609-2125-techdebt-adobe-firefly-node-layer
-type: techdebt
+type: brief
 title: "Pluggable Adobe Firefly node layer feeding the vignette pipeline"
 actor: code-claude
 to: any
